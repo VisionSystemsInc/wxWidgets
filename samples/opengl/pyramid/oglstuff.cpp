@@ -1218,12 +1218,12 @@ void myOGLManager::SetImmutableString(const unsigned char* strImage,
     m_ImmString.SetImmutString(&m_ImmutStringSha, strImage, iWidth, iHeigh);
 }
 
-void myOGLManager::SetViewport(int x, int y, int width, int height)
+void myOGLManager::SetViewport(int x, int y, int width, int height, double scale)
 {
     if (width < 1) width = 1;
     if (height < 1) height = 1;
 
-    glViewport(x, y, (GLsizei)width, (GLsizei)height);
+    glViewport(x, y, (GLsizei)width * scale, (GLsizei)height * scale);
 
     // The camera handles perspective projection
     m_Camera.ViewSizeChanged(width, height);

@@ -311,7 +311,7 @@ public:
     void SetImmutableString(const unsigned char* strImage, int iWidth, int iHeigh);
 
     // For window size change
-    void SetViewport(int x, int y, int width, int height);
+    void SetViewport(int x, int y, int width, int height, double scale=1.0);
 
     void Render(); // Total rendering
 
